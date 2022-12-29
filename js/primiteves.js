@@ -1,4 +1,4 @@
-console.log("primitives");
+console.log("primitives"); //primitives
 
 // 1 STRING строки
 let stringData = "string Data";
