@@ -17,3 +17,5 @@ const userName = "Zhadyra"; //переменная const обьявляется 
 console.log(userName); //Zhadyra
 let lastName = "Anarbayev";
 console.log(lastName);
+lastName = "Anlamassova";
+console.log("lastName: ", lastName); // lastName:  Anlamassova
