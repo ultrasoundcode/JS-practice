@@ -94,12 +94,12 @@ console.log(`тип данных $(value), через конкатенацио:`
 //  П Р И М Е Р //
 value = true;
 toString = String(value);
-console.log(toString); // 0
+console.log(toString); // true
 console.log(typeof toString); //  string
 
 // 2 способ
 toString = value + "";
-console.log(toString); // 0
+console.log(toString); // true
 console.log(typeof toString); // string
 
 //Булевое(логическое) false к СТРОКЕ//
@@ -120,12 +120,12 @@ console.log(`тип данных $(value), через конкатенацио:`
 // 1 способ
 value = false;
 toString = String(value);
-console.log(toString); // 0
+console.log(toString); // false
 console.log(typeof toString); // string
 
 // 2 способ
 toString = value + "";
-console.log(toString); // 0
+console.log(toString); // false
 console.log(typeof toString); // string
 
 // undefined к СТРОКЕ//
@@ -146,7 +146,7 @@ console.log(`тип данных $(value), через конкатенацио:`
 // 1 способ
 value = undefined;
 toString = String(value);
-console.log(toString); // 0
+console.log(toString); // undefined
 console.log(typeof toString); // string
 
 // 2 способ
@@ -158,7 +158,7 @@ console.log(typeof toString); // string
 //1 способ
 value = null;
 toString = String(value);
-console.log(`$(value), через конструктор String():`, toString); //$(value), через конструктор String(): 0
+console.log(`$(value), через конструктор String():`, toString); //$(value), через конструктор String(): null
 console.log(
   `тип данных $(value), через конструктор String():`,
   typeof toString
@@ -166,7 +166,7 @@ console.log(
 
 // 2 способ
 toString = value + "";
-console.log(`$(value), через конкатенацио:`, toString); //$(value), через конкатенацио: 0
+console.log(`$(value), через конкатенацио:`, toString); //$(value), через конкатенацио: null
 console.log(`тип данных $(value), через конкатенацио:`, typeof toString); //тип данных $(value), через конкатенацио: string
 //  П Р И М Е Р //
 //1 способ
