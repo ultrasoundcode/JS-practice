@@ -538,12 +538,276 @@
 // }
 // console.log(checkPassword("jqueryismyjam"));
 //==========Задача 27/36================================================
+// Функция getSubscriptionPrice(type) получает строку с типом подписки пользователя (параметр type), проверяет её на совпадение с тремя возможными типами ежемесячной подписки и возвращает цену хранящуюся в переменной price.
+
+// Если значение параметра type это строка:
+
+// "starter" - цена подписки 0 кредитов.
+// "professional" - цена подписки 20 кредитов.
+// "organization" - цена подписки 50 кредитов.
+// Изначально в теле функции была инструкция if...else, которая выглядела вот так.
+
+// if (type === "starter") {
+//   price = 0;
+// } else if (type === "professional") {
+//   price = 20;
+// } else if (type === "organization") {
+//   price = 50;
+// }
+// После рефакторинга инструкция if..else была заменена на switch. Дополни код инструкции switch, чтобы функция работала правильно.
+
+// Объявлена функция getSubscriptionPrice(type)
+// Вызов getSubscriptionPrice("professional") возвращает число 20
+// Вызов getSubscriptionPrice("organization") возвращает число 50
+// Вызов getSubscriptionPrice("starter") возвращает число 0
+
+// function getSubscriptionPrice(type) {
+//   let price;
+
+//   switch (type) {
+//     case "starter":
+//       price = 0;
+//       break;
+
+//     case "professional":
+//       price = 20;
+//       break;
+
+//     case "organization":
+//       price = 50;
+//       break;
+//   }
+
+//   return price;
+// }
 //==========Задача 28/36================================================
+
+// Функция checkPassword(password) получает пароль в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
+
+// Если значение параметра password:
+
+// равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+// совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+// не удовлетворяет ни одному из предыдущих условий, в переменную message записывается строка "Access denied, wrong password!".
+// Проведи рефакторинг кода, заменив инструкцию if..else на switch, и не забудь о блоке default (аналог else).
+
+// Объявлена функция checkPassword(password)
+// Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
+// Вызов checkPassword(null) возвращает "Canceled by user!"
+// Вызов checkPassword("polyhax") возвращает "Access denied, wrong password!"
+// Вызов checkPassword("jqueryismyjam") возвращает "Welcome!"
+
+// function checkPassword(password) {
+//   let message;
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+
+//   switch (password) {
+//     case null:
+//       message = "Canceled by user!";
+//       break;
+//     case ADMIN_PASSWORD:
+//       message = "Welcome!";
+//       break;
+//     default:
+//       message = "Access denied, wrong password!";
+//   }
+
+//   return message;
+// }
 //==========Задача 29/36================================================
+// Функция getShippingCost(country) должна проверять возможность доставки товара в страну пользователя (параметр country) и возвращать сообщение о результате хранящееся в переменной message. Обязательно используй инструкцию switch.
+
+// Формат возвращаемой строки "Shipping to <country> will cost <price> credits", где вместо <country> и <price> необходимо подставить соотвествующие значения.
+
+// Список стран и стоимость доставки:
+
+// China - 100 кредитов
+// Chile - 250 кредитов
+// Australia - 170 кредитов
+// Jamaica - 120 кредитов
+// Из списка видно, что доставка есть не везде. Если указанной страны нет в списке, то функция должна вернуть строку "Sorry, there is no delivery to your country"
+
+// Объявлена функция getShippingCost(country)
+// В теле функции использована инструкция switch
+// Вызов getShippingCost("Australia") возвращает "Shipping to Australia will cost 170 credits"
+// Вызов getShippingCost("Germany") возвращает "Sorry, there is no delivery to your country"
+// Вызов getShippingCost("China") возвращает "Shipping to China will cost 100 credits"
+// Вызов getShippingCost("Chile") возвращает "Shipping to Chile will cost 250 credits"
+// Вызов getShippingCost("Jamaica") возвращает "Shipping to Jamaica will cost 120 credits"
+// Вызов getShippingCost("Sweden") возвращает "Sorry, there is no delivery to your country"
+
+// function getShippingCost(country) {
+//   let message;
+//   switch (country) {
+//     case "China":
+//       message = "Shipping to China will cost 100 credits";
+//       break;
+//     case "Australia":
+//       message = "Shipping to Australia will cost 170 credits";
+//       break;
+//     case "Chile":
+//       message = "Shipping to Chile will cost 250 credits";
+//       break;
+//     case "Jamaica":
+//       message = "Shipping to Jamaica will cost 120 credits";
+//       break;
+//     default:
+//       message = "Sorry, there is no delivery to your country";
+//   }
+//   return message;
+// }
 //==========Задача 30/36================================================
+
+// Функция getNameLength(name) принимает имя (параметр name) и возвращает строку, в которой указана его длина. Дополни шаблонную строку в переменной message длиной строки из параметра name.
+
+// Объявлена функция getNameLength(name)
+// Вызов функции getNameLength("Poly") возвращает "Name Poly is 4 characters long"
+// Вызов функции getNameLength("Harambe") возвращает "Name Harambe is 6 characters long"
+// Вызов функции getNameLength("Billy") возвращает "Name Billy is 5 characters long"
+// Вызов функции getNameLength("Joe") возвращает "Name Joe is 3 characters long"
+
+// function getNameLength(name) {
+//   const message = `Name ${name} is ${name.length} characters long`; // Change this line
+
+//   return message;
+// }
 //==========Задача 31/36================================================
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим элементам или свойствам строки в переменной course.
+
+// courseTopicLength - длина строки.
+// firstElement - первый символ строки.
+// lastElement - последний символ строки.
+// Объявлена переменная courseTopic
+// Значение переменной courseTopic это строка "JavaScript essentials"
+// Объявлена переменная courseTopicLength
+// Значение переменной courseTopicLength это число 21
+// Объявлена переменная firstElement
+// Значение переменной firstElement это строка "J"
+// Объявлена переменная lastElement
+// Значение переменной lastElement это строка "s"
+
+// const courseTopic = "JavaScript essentials";
+
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopic.length - 1];
+
+// console.log(courseTopicLength);
+// console.log(firstElement);
+// console.log(lastElement);
 //==========Задача 32/36================================================
-//==========Задача 33/36================================================
+// Функция getSubstring(string, length) принимает строку и возвращает подстроку от начала и до length символов. Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+// string - оригинальная строка
+// length - количество символов с начала строки для подстроки
+// Присвой переменной substring выражение создания подстроки длинной length символов (от начала) из строки string.
+
+// Объявлена функция getSubstring(string, length)
+// Вызов функции getSubstring("Hello world", 3) возвращает "Hel"
+// Вызов функции getSubstring("Hello world", 6) возвращает "Hello"
+// Вызов функции getSubstring("Hello world", 8) возвращает "Hello wo"
+// Вызов функции getSubstring("Hello world", 11) возвращает "Hello world"
+// Вызов функции getSubstring("Hello world", 0) возвращает ""
+
+// function getSubstring(string, length) {
+//   const substring = string.substring(0, length);
+// return substring;;
+
+//   return substring;
+// }
+// console.log(getSubstring("Hello world", 3)); // "Hel"
+// console.log(getSubstring("Hello world", 6)); // "Hello"
+// console.log(getSubstring("Hello world", 8)); // "Hello wo"
+// console.log(getSubstring("Hello world", 11)); // "Hello world"
+// console.log(getSubstring("Hello world", 0)); // ""
+// //==========Задача 33/36================================================
+// Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+
+// Дополни код функции так, что если длина строки:
+
+// не превышает maxLength, функция возвращает её в исходном виде.
+// больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
+// Объявлена функция formatMessage(message, maxLength)
+// Вызов функции formatMessage("Curabitur ligula sapien", 16) возвращает "Curabitur ligula..."
+// Вызов функции formatMessage("Curabitur ligula sapien", 23) возвращает "Curabitur ligula sapien"
+// Вызов функции formatMessage("Vestibulum facilisis purus nec", 20) возвращает "Vestibulum facilisis..."
+// Вызов функции formatMessage("Vestibulum facilisis purus nec", 30) возвращает "Vestibulum facilisis purus nec"
+// Вызов функции formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) возвращает "Nunc sed turpis..."
+// Вызов функции formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) возвращает "Nunc sed turpis a felis in nunc fringilla"
+
+// function formatMessage(message, maxLength) {
+//   let result;
+
+//   if (message.length > maxLength) {
+//     result = message.substr(0, maxLength) + "...";
+//   } else {
+//     result = message;
+//   }
+
+//   return result;
+// }
+
 //==========Задача 34/36================================================
+// Функция normalizeInput(input) принимает строку (параметр input) и возвращает такую же строку, но в нижнем регистре. Присвой переменной normalizedInput выражение создания строки в нижнем регистре из параметра input.
+
+// Объявлена функция normalizeInput(input)
+// Вызов функции normalizeInput("Hello world") возвращает "hello world"
+// Вызов функции normalizeInput("This ISN'T SpaM") возвращает "this isn't spam"
+// Вызов функции normalizeInput("Big SALE") возвращает "big sale"
+
+// function normalizeInput(input) {
+//   const normalizedInput = input.toLowerCase(); // Change this line
+
+//   return normalizedInput;
+// }
+
 //==========Задача 35/36================================================
-//==========Задача 36/36================================================
+// Функция checkForName(fullname, name) принимает два параметра и возвращает буль true или false - результат проверки вхождения подстроки name в строку fullname.
+
+// fullname - полное имя состоящее из двух слов (имени и фамилии) разделённых пробелом.
+// name - имя для проверки вхождения в полное имя.
+// Присвой переменной result выражение проверки вхождения имени (параметр name), в полное имя (параметр fullname). Пусть функция строго относится к регистру букв, то есть «Петя» и «петя» для неё разные имена.
+
+// Объявлена функция checkForName(fullname, name).
+// Вызов функции checkForName("Egor Kolbasov", "Egor") возвращает true
+// Вызов функции checkForName("Egor Kolbasov", "egor") возвращает false
+// Вызов функции checkForName("Egor Kolbasov", "egOr") возвращает false
+// Вызов функции checkForName("Egor Kolbasov", "Zhenya") возвращает false
+// Вызов функции checkForName("Vadim Nekrasov", "Vadim") возвращает true
+// Вызов функции checkForName("Vadim Nekrasov", "vadim") возвращает false
+// Вызов функции checkForName("Vadim Nekrasov", "Dima") возвращает false
+
+// function checkForName(fullName, name) {
+//   const result = fullName.includes(name); // Change this line
+//   return result;
+// }
+
+//==========Задача 36/36(проверка спама)================================================
+// Функция checkForSpam(message) принимает строку (параметр message), проверяет её на содержание запрещенных слов spam и sale, и возвращает результат проверки. Слова в строке параметра message могут быть в произвольном регистре, например SPAM или sAlE.
+
+// Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
+// Если в строке нет запрещенных слов, функция возвращает буль false.
+// Объявлена функция checkForSpam(message).
+// Вызов функции checkForSpam("Latest technology news") возвращает false
+// Вызов функции checkForSpam("JavaScript weekly newsletter")возвращает false
+// Вызов функции checkForSpam("Get best sale offers now!") возвращает true
+// Вызов функции checkForSpam("Amazing SalE, only tonight!") возвращает true
+// Вызов функции checkForSpam("Trust me, this is not a spam message") возвращает true
+// Вызов функции checkForSpam("Get rid of sPaM emails. Our book in on sale!") возвращает true
+// Вызов функции checkForSpam("[SPAM] How to earn fast money?") возвращает true
+
+// function checkForSpam(message) {
+//   let result;
+
+//   message = message.toLowerCase(message);
+
+//   result = message.includes("spam") || message.includes("sale") ? true : false;
+
+//   if (message.includes("spam") || message.includes("sale")) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+
+//   return result;
+// }
