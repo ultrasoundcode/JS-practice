@@ -5,4 +5,5 @@
 // import "./js/toBoolean.js";
 // import "./js/avtoCheck.js";
 // import "./js/false-values.js";
-import './js/math.js';
+// import './js/math.js';
+import './js/branching.js';
