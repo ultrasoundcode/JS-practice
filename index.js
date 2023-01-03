@@ -8,3 +8,4 @@
 // import './js/math.js';
 // import './js/branching.js';
 // import './js/cycles.js';
+import './js/function.js';
