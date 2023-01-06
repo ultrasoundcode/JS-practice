@@ -9,4 +9,5 @@
 // import './js/branching.js';
 // import './js/cycles.js';
 // import './js/function.js';
-import './js/array.js';
+// import './js/array.js';
+import './js/goit-practice.js';
