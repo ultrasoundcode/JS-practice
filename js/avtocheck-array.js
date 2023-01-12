@@ -175,11 +175,80 @@ function makeArray(firstArray, secondArray, maxLength) {
   }
 */
 //=решение=
-function makeArray(firstArray, secondArray, maxLength) {
-  let newArray = firstArray.concat(secondArray);
-  if (maxLength == 0) return [];
-  else if (newArray > maxLength) return newArray.slice(0, maxLength);
-  else {
-    return newArray;
+// function makeArray(firstArray, secondArray, maxLength) {
+//   let newArray = firstArray.concat(secondArray);
+//   if (maxLength == 0) return [];
+//   else if (newArray > maxLength) return newArray.slice(0, maxLength);
+//   else {
+//     return newArray;
+//   }
+// }
+//================ Задача 20/32 ================
+/*Напиши функцию calculateTotalPrice(order), которая принимает один параметр order - массив чисел,
+ и рассчитывает общую сумму его элементов. Общая сумма элементов должна сохраняться в переменной total,
+  которая возвращается, как результат работы функции.
+
+Объявлена функция calculateTotalPrice(order)
+Вызов функции calculateTotalPrice([12, 85, 37, 4]) возвращает 138
+Вызов функции calculateTotalPrice([164, 48, 291]) возвращает 503
+Вызов функции calculateTotalPrice([412, 371, 94, 63, 176]) возвращает 1116
+Вызов функции calculateTotalPrice() со случайным массивом возвращает правильное значение
+
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+
+  // Change code above this line
+  return total;
+}
+*/
+// function calculateTotalPrice(order) {
+//   // Инициализируем переменную total для хранения суммы элементов
+//   let total = 0;
+//   // Проходимся по элементам массива order
+//   for (let i = 0; i < order.length; i++) {
+//     // Добавляем текущий элемент к общей сумме
+//     total += order[i];
+//   }
+//   // Возвращаем общую сумму элементов
+//   return total;
+// }
+
+//================ Задача 21/32 ================
+/*Напиши функцию findLongestWord(string) которая принимает произвольную строку состоящую только из слов разделённых пробелом (параметр string)
+ и возвращает самое длинное слово в этой строке.
+
+Объявлена функция findLongestWord(string)
+Вызов функции findLongestWord("The quick brown fox jumped over the lazy dog") возвращает jumped
+Вызов функции findLongestWord("Google do a roll") возвращает Google
+Вызов функции findLongestWord("May the force be with you") возвращает force
+Вызов функции findLongestWord() со случайной строкой возвращает правильное значение
+
+function findLongestWord(string) {
+  // Change code below this line
+
+
+
+  // Change code above this line
+}
+*/
+
+function findLongestWord(string) {
+  // Разбиваем входную строку на слова с помощью пробелов
+  let words = string.split(' ');
+  // Инициализируем переменную для хранения длины текущего слова
+  let maxLength = 0;
+  // Инициализируем переменную для хранения самого длинного слова
+  let longestWord = '';
+  // Проходимся по массиву слов
+  for (let i = 0; i < words.length; i++) {
+    // Проверяем, длиннее ли текущее слово текущего максимума
+    if (words[i].length > maxLength) {
+      // Если да, обновляем максимум и записываем текущее слово как самое длинное
+      maxLength = words[i].length;
+      longestWord = words[i];
+    }
   }
+  // Возвращаем самое длинное слово
+  return longestWord;
 }
