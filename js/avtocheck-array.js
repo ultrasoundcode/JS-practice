@@ -304,19 +304,19 @@ function filterArray(numbers, value) {
 Вызов функции getEvenNumbers() со случайными start и end возвращает правильный массив
 
 */
-function getEvenNumbers(start, end) {
-  // Инициализируем массив для хранения четных чисел
-  const evenNumbers = [];
-  // Используем цикл for для перебора чисел от start до end
-  for (let i = start; i <= end; i++) {
-    // Если число делится на 2 без остатка, то добавляем его в массив
-    if (i % 2 === 0) {
-      evenNumbers.push(i);
-    }
-  }
-  // Возвращаем массив с четными числами
-  return evenNumbers;
-}
+// function getEvenNumbers(start, end) {
+//   // Инициализируем массив для хранения четных чисел
+//   const evenNumbers = [];
+//   // Используем цикл for для перебора чисел от start до end
+//   for (let i = start; i <= end; i++) {
+//     // Если число делится на 2 без остатка, то добавляем его в массив
+//     if (i % 2 === 0) {
+//       evenNumbers.push(i);
+//     }
+//   }
+//   // Возвращаем массив с четными числами
+//   return evenNumbers;
+// }
 //================ Задача 30/32 ================
 
 /*Задача 30/32
@@ -339,13 +339,73 @@ for (let i = start; i < end; i += 1) {
 }
 */
 
-const start = 6;
-const end = 27;
-let number;
+// const start = 6;
+// const end = 27;
+// let number;
 
-for (let i = start; i < end; i += 1) {
-  if (i % 5 === 0) {
-    number = i;
-    break; // добавленная строка, для выхода из цикла после нахождения первого числа, которое делится на 5 без остатка
-  }
-}
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break; // добавленная строка, для выхода из цикла после нахождения первого числа, которое делится на 5 без остатка
+//   }
+// }
+//================ тестовая задача ================
+/* Напиши скрипт поиска самого большого числа в массиве 
+при условии что числа уникальные(не повторяются)
+*/
+// const numbers = [99, 3, 4, 6, 666, 7659, 8574,  99, 44];
+// let biggestNumber = numbers[0];
+// for (const number of numbers) {
+//   if (number > biggestNumber) {
+//     biggestNumber = number;
+//   }
+// }
+// console.log(biggestNumber);
+//================ тестовая задача ================
+/* Напиши скрипт поиска самого маленько числа числа в массиве 
+при условии что числа уникальные(не повторяются)
+*/
+// const numbers = [99, 3, 4, 6, 666, 7659, 8574, 99, 44];
+// let smallerNumber = numbers[0];
+// for (const number of numbers) {
+//   if (number < smallerNumber) {
+//     smallerNumber = number;
+//   }
+// }
+// console.log(smallerNumber);
+//======================================================================
+
+/*Несколько лайфхаков при работе с массивами
+Как быстро очистить массив
+*/
+const fruits = [
+  'banana',
+  'apple',
+  'orange',
+  'watermelon',
+  'apple',
+  'orange',
+  'grape',
+  'apple',
+];
+fruits.length = 0;
+console.log(fruits); // вернет []
+// Как объединить более двух массивов
+const fruits = ['apple', 'banana', 'orange'];
+const meat = ['poultry', 'beef', 'fish'];
+const vegetables = ['potato', 'tomato', 'cucumber'];
+const food = [...fruits, ...meat, ...vegetables];
+console.log(food); // вернет ["apple", "banana", "orange", "poultry", "beef", "fish", "potato", "tomato", "cucumber"]
+// Как получить рандомное значение массива
+const fruits = [
+  'banana',
+  'apple',
+  'orange',
+  'watermelon',
+  'apple',
+  'orange',
+  'grape',
+  'apple',
+];
+const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+console.log(randomFruit); // вернет рандомный фрукт из массива
