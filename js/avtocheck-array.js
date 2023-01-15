@@ -233,22 +233,119 @@ function findLongestWord(string) {
 }
 */
 
-function findLongestWord(string) {
-  // Разбиваем входную строку на слова с помощью пробелов
-  let words = string.split(' ');
-  // Инициализируем переменную для хранения длины текущего слова
-  let maxLength = 0;
-  // Инициализируем переменную для хранения самого длинного слова
-  let longestWord = '';
-  // Проходимся по массиву слов
-  for (let i = 0; i < words.length; i++) {
-    // Проверяем, длиннее ли текущее слово текущего максимума
-    if (words[i].length > maxLength) {
-      // Если да, обновляем максимум и записываем текущее слово как самое длинное
-      maxLength = words[i].length;
-      longestWord = words[i];
+// function findLongestWord(string) {
+//   // Разбиваем входную строку на слова с помощью пробелов
+//   let words = string.split(' ');
+//   // Инициализируем переменную для хранения длины текущего слова
+//   let maxLength = 0;
+//   // Инициализируем переменную для хранения самого длинного слова
+//   let longestWord = '';
+//   // Проходимся по массиву слов
+//   for (let i = 0; i < words.length; i++) {
+//     // Проверяем, длиннее ли текущее слово текущего максимума
+//     if (words[i].length > maxLength) {
+//       // Если да, обновляем максимум и записываем текущее слово как самое длинное
+//       maxLength = words[i].length;
+//       longestWord = words[i];
+//     }
+//   }
+//   // Возвращаем самое длинное слово
+//   return longestWord;
+// }
+//================ Задача 27/32 ================
+/*Выполни рефакторинг функции filterArray(numbers, value) заменив цикл for на for...of.
+
+Объявлена функция filterArray(numbers, value)
+Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает [4, 5]
+Вызов функции filterArray([1, 2, 3, 4, 5], 4) возвращает [5]
+Вызов функции filterArray([1, 2, 3, 4, 5], 5) возвращает []
+Вызов функции filterArray([12, 24, 8, 41, 76], 38) возвращает [41, 76]
+Вызов функции filterArray([12, 24, 8, 41, 76], 20) возвращает [24, 41, 76]
+Вызов функции filterArray() со случайным массивом и числом возвращает правильный массив
+//
+function filterArray(numbers, value) {
+  // Change code below this line
+  const filteredNumbers = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    const number = numbers[i];
+
+    if (number > value) {
+      filteredNumbers.push(number);
     }
   }
-  // Возвращаем самое длинное слово
-  return longestWord;
+
+  return filteredNumbers;
+  // Change code above this line
+}
+
+*/
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+
+  for (const number of numbers) {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+
+  return filteredNumbers;
+}
+//================ Задача 29/32 ================
+/*Напиши функцию getEvenNumbers(start, end) которая возвращает массив всех чётных чисел от start до end.
+ Чётным считается число которое делится на 2 без остатка (10 % 2 === 0).
+
+Объявлена функция getEvenNumbers(start, end)
+Вызов функции getEvenNumbers(2, 5) возвращает [2, 4]
+Вызов функции getEvenNumbers(3, 11) возвращает [4, 6, 8, 10]
+Вызов функции getEvenNumbers(6, 12) возвращает [6, 8, 10, 12]
+Вызов функции getEvenNumbers(8, 8) возвращает [8]
+Вызов функции getEvenNumbers(7, 7) возвращает []
+Вызов функции getEvenNumbers() со случайными start и end возвращает правильный массив
+
+*/
+function getEvenNumbers(start, end) {
+  // Инициализируем массив для хранения четных чисел
+  const evenNumbers = [];
+  // Используем цикл for для перебора чисел от start до end
+  for (let i = start; i <= end; i++) {
+    // Если число делится на 2 без остатка, то добавляем его в массив
+    if (i % 2 === 0) {
+      evenNumbers.push(i);
+    }
+  }
+  // Возвращаем массив с четными числами
+  return evenNumbers;
+}
+//================ Задача 30/32 ================
+
+/*Задача 30/32
+Дополни код так, чтобы в переменную number записывалось первое число от start до end, которое делится на 5 без остатка.
+
+Объявлена переменная start со значением 6
+Объявлена переменная end со значением 27
+Объявлена переменная number без инициализации
+Итоговое значение переменной number равно 10
+В цикле for используется break для выхода до завершения всех итераций цикла
+
+const start = 6;
+const end = 27;
+let number;
+
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+  }
+}
+*/
+
+const start = 6;
+const end = 27;
+let number;
+
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+    break; // добавленная строка, для выхода из цикла после нахождения первого числа, которое делится на 5 без остатка
+  }
 }
