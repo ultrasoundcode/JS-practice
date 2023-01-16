@@ -280,17 +280,17 @@ function filterArray(numbers, value) {
 }
 
 */
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
 
-  for (const number of numbers) {
-    if (number > value) {
-      filteredNumbers.push(number);
-    }
-  }
+//   for (const number of numbers) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
 
-  return filteredNumbers;
-}
+//   return filteredNumbers;
+// }
 //================ Задача 29/32 ================
 /*Напиши функцию getEvenNumbers(start, end) которая возвращает массив всех чётных чисел от start до end.
  Чётным считается число которое делится на 2 без остатка (10 % 2 === 0).
@@ -378,24 +378,24 @@ for (let i = start; i < end; i += 1) {
 /*Несколько лайфхаков при работе с массивами
 Как быстро очистить массив
 */
-const fruits = [
-  'banana',
-  'apple',
-  'orange',
-  'watermelon',
-  'apple',
-  'orange',
-  'grape',
-  'apple',
-];
-fruits.length = 0;
-console.log(fruits); // вернет []
+// const fruits = [
+//   'banana',
+//   'apple',
+//   'orange',
+//   'watermelon',
+//   'apple',
+//   'orange',
+//   'grape',
+//   'apple',
+// ];
+// fruits.length = 0;
+// console.log(fruits); // вернет []
 // Как объединить более двух массивов
-const fruits = ['apple', 'banana', 'orange'];
-const meat = ['poultry', 'beef', 'fish'];
-const vegetables = ['potato', 'tomato', 'cucumber'];
-const food = [...fruits, ...meat, ...vegetables];
-console.log(food); // вернет ["apple", "banana", "orange", "poultry", "beef", "fish", "potato", "tomato", "cucumber"]
+// const fruits = ['apple', 'banana', 'orange'];
+// const meat = ['poultry', 'beef', 'fish'];
+// const vegetables = ['potato', 'tomato', 'cucumber'];
+// const food = [...fruits, ...meat, ...vegetables];
+// console.log(food); // вернет ["apple", "banana", "orange", "poultry", "beef", "fish", "potato", "tomato", "cucumber"]
 // Как получить рандомное значение массива
 const fruits = [
   'banana',
@@ -409,3 +409,4 @@ const fruits = [
 ];
 const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
 console.log(randomFruit); // вернет рандомный фрукт из массива
+// =======================================
