@@ -12,4 +12,5 @@
 // import './js/array.js';
 // import './js/goit-practice.js';
 // import './js/avtocheck-array.js';
-import './js/object.js';
+// import './js/object.js';
+import './js/lesson-7-callbacks.js';
