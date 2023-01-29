@@ -44,30 +44,30 @@ console.log(result);
 
 // ====  array.map()  ====
 result = numbers.map((number) => {
-  console.log('number: ', number);
+  // console.log('number: ', number);
   return number + '';
 });
-console.log('result .map(): ', result);
+// console.log('result .map(): ', result);
 
 // ====  array.filter()  ====
 result = numbers.filter((item) => {
-  console.log('item: ', item);
+  // console.log('item: ', item);
   /*пример
    if (item > 5) {
      return item; //[6, 7]
    }
 	 */
 });
-console.log('result .filter(): ', result); //[пустой массив]
+// console.log('result .filter(): ', result); //[пустой массив]
 
 // ====  array.find()  =====
 result = numbers.find((el) => {
-  console.log('el: ', el);
+  // console.log('el: ', el);
   if (el % 2 === 0) {
     return el; //1 вернет первое совпадение
   }
 });
-console.log('result .find(): ', result); // 2
+// console.log('result .find(): ', result); // 2
 
 // ====  reduce()  ====
 result = numbers.reduce((memo, element) => {
@@ -81,35 +81,35 @@ result = numbers.reduce((memo, element) => {
   // 7 * 2
   return memo; //[2, 4, 6, 8, 10, 12, 14]
 }, []);
-console.log('result .reduce(): ', result); // [2, 4, 6, 8, 10, 12, 14]
+// console.log('result .reduce(): ', result); // [2, 4, 6, 8, 10, 12, 14]
 
 // ====  array.some() ====
 result = numbers.some((x) => {
   return x === 3;
 });
-console.log('result .some(): ', result); //result .some():  true потому что некототые  элементы массивы соответствует условиям
+// console.log('result .some(): ', result); //result .some():  true потому что некототые  элементы массивы соответствует условиям
 
 result = numbers.some((x) => {
   return x > 7;
 });
-console.log('result .some(): ', result); //result .some():  false потому что некоторые элементы не больше 7
+// console.log('result .some(): ', result); //result .some():  false потому что некоторые элементы не больше 7
 // ====  array.every()  ====
 result = numbers.every((x) => {
   return x === 3;
 });
-console.log('result .every(): ', result); //result .every():  false потому что не все Элементы соответсвует условиям
+// console.log('result .every(): ', result); //result .every():  false потому что не все Элементы соответсвует условиям
 
 result = numbers.every((x) => {
   return x > 0;
 });
-console.log('result .every(): ', result); // result .every():  true потому что каждый элемент больше нуля
+// console.log('result .every(): ', result); // result .every():  true потому что каждый элемент больше нуля
 
 const numberValues = [2, 1, 13, 56, 724, 34, 76];
 // ====  array.sort()  ====
 result = numberValues.sort((min, max) => {
   return min - max; // от меньшего к большему
 });
-console.log('result .sort(): ', result); // [1, 2, 13, 34, 56, 76, 724]
+// console.log('result .sort(): ', result); // [1, 2, 13, 34, 56, 76, 724]
 
 const stringValues = [
   'Lewis Hamilton',
@@ -118,7 +118,7 @@ const stringValues = [
   'Charles Leclerc',
 ];
 result = stringValues.sort();
-console.log('My lovely drivers ', result); // ['Charles Leclerc', 'Kimi Raikkonen', 'Lewis Hamilton', 'Sebastian Vettel'] сортирует по буквам в алфавитном порядке
+// console.log('My lovely drivers ', result); // ['Charles Leclerc', 'Kimi Raikkonen', 'Lewis Hamilton', 'Sebastian Vettel'] сортирует по буквам в алфавитном порядке
 
 const stringValues2 = [
   'Lewis Hamilton',
@@ -127,7 +127,7 @@ const stringValues2 = [
   'Charles Leclerc',
 ];
 result = stringValues2.sort().reverse(); // в обратном порядке
-console.log('My lovely drivers ', result); // ['Sebastian Vettel', 'Lewis Hamilton', 'Kimi Raikkonen', 'Charles Leclerc']
+// console.log('My lovely drivers ', result); // ['Sebastian Vettel', 'Lewis Hamilton', 'Kimi Raikkonen', 'Charles Leclerc']
 
 // ====  array.flatMap()  ====
 const user = {
@@ -135,15 +135,54 @@ const user = {
   age: 34,
 };
 const values = Object.entries(user);
-console.log('values :', values);
+// console.log('values :', values);
 result = values.flatMap((elem) => {
-  console.log(elem); //  ['name', 'Salamon'] ['age', 34]
+  // console.log(elem); //  ['name', 'Salamon'] ['age', 34]
   return elem;
 });
-console.log('result .flatMap(): ', result); //['name', 'Salamon', 'age', 34]
+// console.log('result .flatMap(): ', result); //['name', 'Salamon', 'age', 34]
 
 // ====  array.findIndex()  ====
 result = numbers.findIndex((elem) => {
   return elem === 0;
 });
-console.log('result .findIndex(): ', result); // -1
+// console.log('result .findIndex(): ', result); // -1
+
+//===== Задача 41/48 ====сортировка по алфавиту и наоботор, сортировка по рейтингу (по возростанию и наоборот )====
+
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+];
+
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) =>
+  firstBook.author.localeCompare(secondBook.author)
+);
+console.log(sortedByAuthorName);
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) =>
+  secondBook.author.localeCompare(firstBook.author)
+);
+console.log(sortedByReversedAuthorName);
+const sortedByAscendingRating = [...books].sort(
+  (firstBook, secondBook) => firstBook.rating - secondBook.rating
+);
+console.log(sortedByAscendingRating);
+const sortedByDescentingRating = [...books].sort(
+  (firstBook, secondBook) => secondBook.rating - firstBook.rating
+);
+console.log(sortedByDescentingRating);
