@@ -44,7 +44,39 @@
 // // image.setAttribute('alt', 'photo'); 1 вариант
 // image.alt = 'photo'; //  2 вариант короткий
 //============ селектор дата атрибутов
-const saveBtn = document.querySelector('[data-action="save"]');
-const closeBtn = document.querySelector('[data-action="close"]');
-console.log(saveBtn.dataset.action); // save
-console.log(closeBtn.dataset.action); // close
+// const saveBtn = document.querySelector('[data-action="save"]');
+// const closeBtn = document.querySelector('[data-action="close"]');
+// console.log(saveBtn.dataset.action); // save
+// console.log(closeBtn.dataset.action); // close
+//============= создание и удаление элементов
+// const wrapper = document.querySelector('.wrapper');
+// const spanEl = document.createElement('span');
+// console.log(spanEl);
+// spanEl.textContent = 'Hello';
+// spanEl.classList.add('color');
+// console.log(spanEl);
+// // wrapper.append(spanEl); // после пешки
+// // wrapper.prepend(spanEl); // перед пешкой
+// wrapper.after(spanEl); // после wrapper
+//============== innerHTML
+// const inner = document.querySelector('.inner');
+// console.log(inner.innerHTML); // <p>test inner</p>
+// inner.innerHTML = ''; // очитить содиржимое inner
+// console.log(inner);
+//============== insertAdjacentHTML
+const wrap = document.querySelector('.wrap');
+// console.log(wrap);
+const ulOchka = document.createElement('ul');
+// console.log(ulOchka);
+wrap.append(ulOchka);
+// const markUp = '<li><p>Lewis</p></li>';
+// ulOchka.insertAdjacentHTML('afterbegin', markUp); // afterbegin - внутри элемента, перед всеми элементами, beforeend - внутри элемента, после всех детей
+// внутри дива wrap создаем 3 лишки с двумя пешками
+const array = [
+  { a: 1, b: 2 },
+  { a: 3, b: 4 },
+  { a: 5, b: 6 },
+];
+const markUpp = array.map(({ a, b }) => `<li><p>${a}</p><p>${b}</p></li>`);
+console.log(markUpp);
+ulOchka.insertAdjacentHTML('afterbegin', markUpp.join(''));
