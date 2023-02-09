@@ -64,19 +64,40 @@
 // inner.innerHTML = ''; // очитить содиржимое inner
 // console.log(inner);
 //============== insertAdjacentHTML
-const wrap = document.querySelector('.wrap');
-// console.log(wrap);
-const ulOchka = document.createElement('ul');
-// console.log(ulOchka);
-wrap.append(ulOchka);
-// const markUp = '<li><p>Lewis</p></li>';
-// ulOchka.insertAdjacentHTML('afterbegin', markUp); // afterbegin - внутри элемента, перед всеми элементами, beforeend - внутри элемента, после всех детей
-// внутри дива wrap создаем 3 лишки с двумя пешками
-const array = [
-  { a: 1, b: 2 },
-  { a: 3, b: 4 },
-  { a: 5, b: 6 },
-];
-const markUpp = array.map(({ a, b }) => `<li><p>${a}</p><p>${b}</p></li>`);
-console.log(markUpp);
-ulOchka.insertAdjacentHTML('afterbegin', markUpp.join(''));
+// const wrap = document.querySelector('.wrap');
+// // console.log(wrap);
+// const ulOchka = document.createElement('ul');
+// // console.log(ulOchka);
+// wrap.append(ulOchka);
+// // const markUp = '<li><p>Lewis</p></li>';
+// // ulOchka.insertAdjacentHTML('afterbegin', markUp); // afterbegin - внутри элемента, перед всеми элементами, beforeend - внутри элемента, после всех детей
+// // внутри дива wrap создаем 3 лишки с двумя пешками
+// const array = [
+//   { a: 1, b: 2 },
+//   { a: 3, b: 4 },
+//   { a: 5, b: 6 },
+// ];
+// const markUpp = array.map(({ a, b }) => `<li><p>${a}</p><p>${b}</p></li>`);
+// console.log(markUpp);
+// ulOchka.insertAdjacentHTML('afterbegin', markUpp.join(''));
+//=========================
+// const greetHello = document.querySelector('.greethello');
+
+// greetHello.addEventListener('click', clickHandler);
+// function clickHandler(event) {
+//   console.log(event);
+//   console.log(event.target.textContent);
+// }
+//============== blur and focus  events =============
+const inputEl = document.querySelector('.input');
+console.log(inputEl);
+
+inputEl.addEventListener('focus', focusHandler);
+function focusHandler() {
+  inputEl.style.backgroundColor = 'violet';
+}
+
+inputEl.addEventListener('blur', blurHandler);
+function blurHandler() {
+  inputEl.style.backgroundColor = 'yellow';
+}
