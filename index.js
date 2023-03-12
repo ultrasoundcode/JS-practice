@@ -14,4 +14,5 @@
 // import './js/avtocheck-array.js';
 // import './js/object.js';
 // import './js/lesson-7-callbacks.js';
-import './js/dom.js';
+// import './js/dom.js';
+import './js/promise.js';
